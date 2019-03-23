@@ -1,0 +1,21 @@
+// Place all the styles related to the hitter18s controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.hitters-box{
+  border: solid 3px green;
+  overflow-x: scroll;
+  table{
+    border-collapse: collapse;
+    width:1000px;
+    tr:nth-child(odd) {
+      background: #deebf8;
+    }
+    th, td{
+      border :1px solid #8fbac8;
+      padding: 8px;
+    }
+    th{
+      white-space: nowrap;
+    }
+  }
+}
