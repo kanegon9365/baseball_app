@@ -2,20 +2,40 @@ class Hitter18sController < ApplicationController
 helper_method :sort_column, :sort_direction
 
   def index
-    @hitter18s = Hitter18.all.order(sort_column + ' ' + sort_direction)
+    @q = Hitter18.ransack(params[:q])
+    @team18s = Team18.all
+    @hitter18_rank = @q.result.includes(:team18, :league18, :player)
+    @search = Hitter18.search(params[:q])
+    # @hitter18s = Hitter18.all.order(sort_column + ' ' + sort_direction)
+  end
+
+  def search
+    @q = Hitter18.search(search_params)
+    @team18s = Team18.all
+    @hitter18_rank = @q.result.includes(:team18, :league18, :player)
+    # @hitter18s = Hitter18.all.order(sort_column + ' ' + sort_direction)
   end
 
   def show
-    @hitter18 = Hitter18.find(params[:id])
+    @hitter18 = Hitter18.select('id, name')
+  end
+
+  def test 
+    @q = Hitter18.ransack(hr_in: [34, 24])
+    @hitter18_rank = @q.result.includes(:team18, :league18, :player)
   end
   
   private
 
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
+    # def sort_direction
+    #   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    # end
 
-    def sort_column
-      Hitter18.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    # def sort_column
+    #   Hitter18.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    # end
+
+    def search_params
+      params.require(:q).permit(:the_bat_gteq, :the_bat_lteq, :the_bat_gt, {:team18_id_in => []})
     end
 end

@@ -1,0 +1,26 @@
+<%= search_form_for(@q, url: search_path) do |f| %>
+  
+
+  <%= f.label :team18_id_in, 'チーム名' %>
+  <%= f.collection_check_boxes :team18_id_in, @team18s, :id, :name %>
+
+  <%= f.submit '検索', class: 'btn btn-primary' %>
+<% end %>
+
+
+
+
+
+
+<% if false %>
+  <%= search_form_for(@q, url:search_path) do |f| %>
+    <%= f.label :team18_id_eq, 'チーム名' %>
+    <%= f.radio_button 'team18_id_eq', '', {:checked => true} %>指定なし
+    <%= f.collection_radio_buttons :team18_id_eq, @team18s, :id, :name, :include_blank => '指定なし' %><br>
+
+    <%= f.label :the_bat_gteq, '規定打席' %>
+    <%= f.radio_button 'the_bat_gteq', '443',{:checked => true} %>規定打席以上
+    <%= f.radio_button 'the_bat_gteq', '' %>規定打席未満も表示
+    <%= f.submit %> 
+  <% end %>
+<% end %>
