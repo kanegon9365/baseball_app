@@ -11,6 +11,7 @@ helper_method :sort_column, :sort_direction
 
   def search
     @q = Hitter18.search(search_params)
+    @search = Hitter18.search(params[:q])
     @team18s = Team18.all
     @hitter18_rank = @q.result.includes(:team18, :league18, :player)
     # @hitter18s = Hitter18.all.order(sort_column + ' ' + sort_direction)
@@ -36,6 +37,6 @@ helper_method :sort_column, :sort_direction
     # end
 
     def search_params
-      params.require(:q).permit(:the_bat_gteq, :the_bat_lteq, :the_bat_gt, {:team18_id_in => []})
+      params.require(:q).permit(:the_bat_gteq, :the_bat_lteq, :the_bat_gt, {:team18_id_in => []}, :player_h_name_or_name_cont)
     end
 end
