@@ -1,8 +1,8 @@
 class Hitter18s < ActiveRecord::Migration[5.2]
   def change
     add_reference :hitter18s, :player, foreign_key: true
-    add_reference :hitter18s, :team18, foreing_key: true
-    add_reference :hitter18s, :league18, foreign_key: true
+    add_reference :hitter18s, :team, foreing_key: true
+    add_reference :hitter18s, :league, foreign_key: true
     add_column :hitter18s, :name, :string
     add_column :hitter18s, :games_played, :integer
     add_column :hitter18s, :the_bat, :integer

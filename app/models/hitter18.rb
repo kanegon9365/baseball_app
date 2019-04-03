@@ -1,9 +1,13 @@
 class Hitter18 < ApplicationRecord
   belongs_to :player
-  belongs_to :league18
-  belongs_to :team18
+  belongs_to :league
+  belongs_to :team
 
-  
+  def age
+    date_format = "%Y%m%d"
+    (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
+  end
+
 
   def average
     if the_bat == 0

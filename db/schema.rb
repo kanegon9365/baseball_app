@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_04_02_063317) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "player_id"
-    t.integer "team17_id"
-    t.integer "league17_id"
+    t.integer "team_id"
+    t.integer "league_id"
     t.string "name"
     t.integer "games_played"
     t.integer "the_bat"
@@ -32,17 +32,17 @@ ActiveRecord::Schema.define(version: 2019_04_02_063317) do
     t.integer "hit_by_pitch"
     t.integer "strike_out"
     t.integer "stolen_base"
-    t.index ["league17_id"], name: "index_hitter17s_on_league17_id"
+    t.index ["league_id"], name: "index_hitter17s_on_league_id"
     t.index ["player_id"], name: "index_hitter17s_on_player_id"
-    t.index ["team17_id"], name: "index_hitter17s_on_team17_id"
+    t.index ["team_id"], name: "index_hitter17s_on_team_id"
   end
 
   create_table "hitter18s", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "player_id"
-    t.integer "team18_id"
-    t.integer "league18_id"
+    t.integer "team_id"
+    t.integer "league_id"
     t.string "name"
     t.integer "games_played"
     t.integer "the_bat"
@@ -57,21 +57,9 @@ ActiveRecord::Schema.define(version: 2019_04_02_063317) do
     t.integer "hit_by_pitch"
     t.integer "strike_out"
     t.integer "stolen_base"
-    t.index ["league18_id"], name: "index_hitter18s_on_league18_id"
+    t.index ["league_id"], name: "index_hitter18s_on_league_id"
     t.index ["player_id"], name: "index_hitter18s_on_player_id"
-    t.index ["team18_id"], name: "index_hitter18s_on_team18_id"
-  end
-
-  create_table "league17s", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "league18s", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_hitter18s_on_team_id"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -90,18 +78,6 @@ ActiveRecord::Schema.define(version: 2019_04_02_063317) do
     t.string "h_name"
     t.integer "number"
     t.date "birthday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "team17s", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "team18s", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
