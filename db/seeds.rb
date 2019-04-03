@@ -24,6 +24,8 @@ Player.create(name: '清宮幸太郎', h_name: 'きよみやこうたろう', nu
 Player.create(name: '吉田正尚', h_name: 'よしだまさたか', number:34 , birthday: '1993-07-15')
 Player.create(name: 'レアード', h_name: 'ぶらんどん・れあーど', number:54 , birthday: '1987-09-11')
 Player.create(name: '田中和基', h_name: 'たなかかずき', number:25 , birthday: '1994-08-08')
+Player.create(name: '菅野智之', h_name: 'すがのともゆき', number:18, birthday: '1989-10-11')
+Player.create(name: '則本昂大', h_name: 'のりもとたかひろ', number:14, birthday: '1990-12-17')
 
 Team.create(name:'カープ')
 Team.create(name:'スワローズ')
@@ -78,3 +80,9 @@ Hitter17.create!(name: '清宮幸太郎', player_id:15, team_id:9, league_id:1, 
 Hitter17.create!(name: '吉田正尚', player_id:16, team_id:10, league_id:1, games_played:14, the_bat:59, at_bat:51, hit:165, second_base:37, third_base:2, hr:26, total_base:284, run_batted_in:86, bases_on_ball:69, hit_by_pitch:7, strike_out:74, stolen_base:3)
 Hitter17.create!(name: 'レアード', player_id:17, team_id:11, league_id:1, games_played:12, the_bat:50, at_bat:45, hit:105, second_base:14, third_base:2, hr:26, total_base:201, run_batted_in:65, bases_on_ball:44, hit_by_pitch:7, strike_out:124, stolen_base:0)
 Hitter17.create!(name: '田中和基', player_id:18, team_id:12, league_id:1, games_played:10, the_bat:46, at_bat:42, hit:112, second_base:11, third_base:1, hr:18, total_base:179, run_batted_in:45, bases_on_ball:37, hit_by_pitch:0, strike_out:101, stolen_base:21)
+
+Pitcher18.create!(name: '菅野智之', player_id:19, team_id: 3, league_id: 1, games:28, win:15, lose:8)
+Pitcher18.create!(name: '則本昂大', player_id:20, team_id: 12, league_id:2, games:27, win:10, lose:11)
+
+Pitcher17.create!(name: '菅野智之', player_id:19, team_id: 3, league_id: 1, games:128, win:151, lose:81)
+Pitcher17.create!(name: '則本昂大', player_id:20, team_id: 12, league_id:2, games:127, win:101, lose:111)

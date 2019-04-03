@@ -1,6 +1,8 @@
 class Player < ApplicationRecord
   has_one :hitter18
   has_one :hitter17
+  has_one :pitcher18
+  has_one :pitcher17
   
   def age
     date_format = "%Y%m%d"

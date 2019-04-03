@@ -1,8 +1,8 @@
 <%= search_form_for(@q, url: search_path) do |f| %>
   
 
-  <%= f.label :team18_id_in, 'チーム名' %>
-  <%= f.collection_check_boxes :team18_id_in, @team18s, :id, :name %>
+  <%= f.label :team_id_in, 'チーム名' %>
+  <%= f.collection_check_boxes :team_id_in, @teams, :id, :name %>
 
   
 

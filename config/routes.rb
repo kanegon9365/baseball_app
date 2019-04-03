@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
-  resources :league18s, only:[:show] do
-    member do
-      get 'hitter'
-      get 'pitcher'
+  
+  resources :players, only:[:show] do
+    collection do
+      get 'hitter18'
+      get 'hitter17'
+      get 'hitter18/pa', to: 'players#h_pa18'
+      get 'hitter18/ce', to: 'players#h_ce18'
+      get 'hitter17/pa', to: 'players#h_pa17'
+      get 'hitter17/ce', to: 'players#h_ce17'
+      get 'pitcher18'
+      get 'pitcher17'
+      get 'pitcher18/pa', to: 'players#p_pa18'
+      get 'pitcher18/ce', to: 'players#p_ce18'
+      get 'pitcher17/pa', to: 'players#p_pa17'
+      get 'pitcher17/ce', to: 'players#p_ce17'
     end
   end
-  resources :players, :only => :index
-  get '/players/hitter18', to: 'players#hitter18'
-  get '/players/hitter17', to: 'players#hitter17'
-  root to: 'hitter18s#index'
+  
+  root to: 'players#hitter18'
+
+
   resources :hitter18s
   get 'search', to: 'hitter18s#search'
   get '/test', to: 'hitter18s#test'

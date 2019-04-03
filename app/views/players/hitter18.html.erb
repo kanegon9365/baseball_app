@@ -1,30 +1,6 @@
-
-<%= link_to '2017年の選手データ', players_hitter17_path %>
-<div class="hitters-box">
-  <table>
-    <tr>
-      <th>選手名</th><th>年齢</th><th>チーム名</th><th>リーグ名</th><th>打率</th><th>OPS</th><th>打席</th><th>打数</th><th>安打</th><th>二塁</th><th>三塁</th><th>本塁打</th><th>塁打</th><th>打点</th><th>四球</th><th>三振</th><th>盗塁</th>
-    </tr>
-    <% @players.each do |h| %>
-      <tr>
-      <td><%= h.name %></td>
-      <td><%= h.age %></td>
-      <td><%= h.hitter18.team18.name %></td>
-      <td><%= h.hitter18.league18.name %></td>
-      <td><%= h.hitter18.average %></td>
-      <td><%= h.hitter18.ops %></td>
-      <td><%= h.hitter18.the_bat %></td>
-      <td><%= h.hitter18.at_bat %></td>
-      <td><%= h.hitter18.hit %></td>
-      <td><%= h.hitter18.second_base %></td>
-      <td><%= h.hitter18.third_base %></td>
-      <td><%= h.hitter18.hr %></td>
-      <td><%= h.hitter18.total_base %></td>
-      <td><%= h.hitter18.run_batted_in %></td>
-      <td><%= h.hitter18.bases_on_ball %></td>
-      <td><%= h.hitter18.strike_out %></td>
-      <td><%= h.hitter18.stolen_base %></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<%= link_to 'パリーグ', hitter18_pa_players_path %>
+<%= link_to 'セリーグ', hitter18_ce_players_path %>
+<%= link_to '投手データ', pitcher18_players_path %>
+<%= link_to '2017年の選手データ', hitter17_players_path %>
+<h1>2018年全リーグの打者成績</h1>
+<%= render 'hitter_table' %>

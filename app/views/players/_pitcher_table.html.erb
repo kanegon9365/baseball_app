@@ -1,0 +1,17 @@
+<div class="hitters-box">
+  <table>
+    <tr>
+      <th>選手名</th><th>チーム名</th><th>リーグ名</th><th>登板数</th><th>勝ち星</th><th>負け星</th>  
+    </tr>
+    <% @pitchers.each do |p| %>
+      <tr>
+      <td><%= p.name %></td>
+      <td><%= p.team.name %></td>
+      <td><%= p.league.name %></td>
+      <td><%= p.games %></td>
+      <td><%= p.win %></td>
+      <td><%= p.lose %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

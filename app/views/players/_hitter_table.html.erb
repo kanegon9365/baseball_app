@@ -1,19 +1,16 @@
-<h1>検索</h1>
-<%= render 'search_form' %>
 <div class="hitters-box">
   <table>
     <tr>
-      <th>選手名</th><th>年齢</th><th>チーム名</th><th>リーグ名</th><th>打率</th><th>OPS</th><th><%= sort_link(@q, :the_bat) %></th><th>打数</th><th>安打</th><th>二塁</th><th>三塁</th><th>本塁打</th><th>塁打</th><th>打点</th><th>四球</th><th>三振</th><th>盗塁</th>
+      <th>選手名</th><th>チーム名</th><th>リーグ名</th><th>打率</th><th>OPS</th><th>打席</th><th>打数</th><th>安打</th><th>二塁</th><th>三塁</th><th>本塁打</th><th>塁打</th><th>打点</th><th>四球</th><th>三振</th><th>盗塁</th>
     </tr>
-    <% @hitter18_rank.each do |h| %>
+    <% @hitters.each do |h| %>
       <tr>
-      <td><%= link_to h.name, hitter18_path(h.id) %></td>
-      <td><%= h.player.age %></td>
+      <td><%= h.name %></td>
       <td><%= h.team.name %></td>
       <td><%= h.league.name %></td>
       <td><%= h.average %></td>
       <td><%= h.ops %></td>
-      <td><%=h.the_bat %></td>
+      <td><%= h.the_bat %></td>
       <td><%= h.at_bat %></td>
       <td><%= h.hit %></td>
       <td><%= h.second_base %></td>

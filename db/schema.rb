@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_063317) do
+ActiveRecord::Schema.define(version: 2019_04_03_110304) do
 
   create_table "hitter17s", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -68,9 +68,34 @@ ActiveRecord::Schema.define(version: 2019_04_02_063317) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pitcher17s", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "player_id"
+    t.integer "league_id"
+    t.integer "team_id"
+    t.string "name"
+    t.integer "games"
+    t.integer "win"
+    t.integer "lose"
+    t.index ["league_id"], name: "index_pitcher17s_on_league_id"
+    t.index ["player_id"], name: "index_pitcher17s_on_player_id"
+    t.index ["team_id"], name: "index_pitcher17s_on_team_id"
+  end
+
   create_table "pitcher18s", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "player_id"
+    t.integer "league_id"
+    t.integer "team_id"
+    t.string "name"
+    t.integer "games"
+    t.integer "win"
+    t.integer "lose"
+    t.index ["league_id"], name: "index_pitcher18s_on_league_id"
+    t.index ["player_id"], name: "index_pitcher18s_on_player_id"
+    t.index ["team_id"], name: "index_pitcher18s_on_team_id"
   end
 
   create_table "players", force: :cascade do |t|
