@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'pitcher18/ce', to: 'players#p_ce18'
       get 'pitcher17/pa', to: 'players#p_pa17'
       get 'pitcher17/ce', to: 'players#p_ce17'
+      
     end
   end
   
