@@ -3,6 +3,8 @@ class PlayersController < ApplicationController
   end
 
   def hitter18
+    @q = Hitter18.ransack(params[:q])
+    @hitters_sort = @q.result(distinct: true)
     @hitters = Hitter18.all
   end
 
@@ -11,11 +13,13 @@ class PlayersController < ApplicationController
   end
 
   def h_pa18
-    @hitters = Hitter18.where(league_id: 2)
+    @q = Hitter18.where(league_id: 2).ransack(params[:q])
+    @hitters_sort = @q.result(distinct: true)
   end
 
   def h_ce18
-    @hitters = Hitter18.where(league_id: 1)
+    @q = Hitter18.where(league_id: 1).ransack(params[:q])
+    @hitters_sort = @q.result(distinct: true)
   end
 
   def h_pa17
